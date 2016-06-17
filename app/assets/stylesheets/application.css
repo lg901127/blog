@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: linear-gradient(red, lightgrey);
+  background-repeat: no-repeat;
+  background-color: lightgrey;
+}
+nav {
+  text-align: center;
+  font-size: 25px;
+  font-family: fantasy;
+  font-weight: bold;
+}
