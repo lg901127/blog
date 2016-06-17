@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
   delete "/posts/:id" => "posts#destroy"
 
+  resources :users
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+
   resources :posts do
     resources :comments
   end

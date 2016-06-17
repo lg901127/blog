@@ -15,8 +15,23 @@
     <%= link_to("Posts", posts_path) %>
     |
     <%= link_to "Search", search_post_path %>
+    |
+    <% if user_signed_in? %>
+      <%= "Hello #{current_user.first_name}" %>
+      <%= link_to "Edit Info", edit_user_path(session[:user_id]) %>
+      <%= link_to "Sign out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to "Create New User", new_user_path %>
+      <%= link_to "Sign in", new_session_path %>
+    <% end %>
     <hr>
   </nav>
+<% if flash[:notice] %>
+  <div class="flash-notice"><%= flash[:notice] %></div>
+<% elsif flash[:alert] %>
+  <div class="flash-alert"><%= flash[:alert] %></div>
+<% end %>
+    <hr>
   <%= yield %>
 
 </body>
