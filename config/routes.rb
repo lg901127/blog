@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-
+  resources :passwordresets, only: [:new, :create, :edit, :update]
+    # get "/passwordresets/:reset_token/edit" => "passwordresets#edit"
+    # patch "passwordresets/:reset_token" => "passwordresets#update", as: :reset_password
+  # end
   resources :posts do
     resources :comments
   end

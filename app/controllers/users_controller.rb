@@ -29,7 +29,6 @@ class UsersController < ApplicationController
         redirect_to edit_user_path(@user), notice: "aaa"
       end
     else
-    # @user.errors.add(:password, "The password you entered is not your current password")
       flash[:alert] = "INCORRECT CURRENT PASSWORD"
       redirect_to edit_user_path(@user)
     end
