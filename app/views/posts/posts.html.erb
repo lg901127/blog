@@ -5,7 +5,7 @@
     <%= submit_tag "Search", name: :nil %>
   </p>
 <% end %>
-<h2><%= link_to "New Post", new_post_path %>
+<div id="new-post"><%= link_to "New Post", new_post_path %></div>
 <hr>
 <% @posts.each do |post| %>
   <%= link_to post.title, blog_path(post) %>
