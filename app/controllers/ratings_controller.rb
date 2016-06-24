@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-
+  before_action :authenticate_user!
   def create
     rating = Rating.new rating_params
     rating.user = current_user
@@ -15,6 +15,16 @@ class RatingsController < ApplicationController
       redirect_to blog_path(current_post), notice: "Rating changed"
     else
       redirect_to blog_path(current_post) #case when vote has already been deleted
+    end
+  end
+
+  def destroy
+    rating = Rating.find_by_id params[:id]
+    if rating
+      rating.destroy
+      redirect_to blog_path(current_post), notice: "Rating removed"
+    else
+      redirect_to blog_path(current_post)
     end
   end
 
