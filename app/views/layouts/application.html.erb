@@ -17,7 +17,8 @@
     </div>
     <div class="nav-right">
     <% if user_signed_in? %>
-    <%= link_to "Hello #{current_user.first_name}", edit_user_path(session[:user_id]) %>
+      <%= link_to "Hello #{current_user.first_name}", edit_user_path(session[:user_id]) %>
+      <%= link_to "Favourite Posts", favourites_path %>
       <%= link_to "Sign out", sessions_path, method: :delete %>
     <% else %>
       <%= link_to "Create New User", new_user_path %>

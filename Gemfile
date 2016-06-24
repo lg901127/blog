@@ -30,6 +30,7 @@ gem 'interactive_editor'
 gem 'awesome_print'
 gem 'hirb'
 gem 'will_paginate'
+gem 'font-awesome-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 # Use Capistrano for deployment

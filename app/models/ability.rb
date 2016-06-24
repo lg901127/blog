@@ -20,6 +20,10 @@ class Ability
     can :manage, Comment do |q|
       q.user == user
     end
+    user ||= User.new
+    can :destroy, Favourite do |f|
+      f.user = user
+    end
     if user.is_admin?
       can :manage, :all
     else

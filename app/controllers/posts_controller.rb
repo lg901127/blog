@@ -58,4 +58,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def current_user_rate
+    @post.rate_for(current_user)
+  end
+  helper_method :current_user_rate
+
 end

@@ -23,9 +23,11 @@ Rails.application.routes.draw do
     # patch "passwordresets/:reset_token" => "passwordresets#update", as: :reset_password
   # end
   resources :posts do
+    resources :favourites, only: [:create, :destroy]
     resources :comments
+    resources :ratings, only: [:create, :update, :destroy]
   end
-
+  resources :favourites, only: [:index]
 
 
 end
