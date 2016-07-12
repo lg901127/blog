@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     redirect_to new_session_path, alert: "Please sign in" unless user_signed_in?
   end
   def posts
-    # @posts = Post.order("created_at")
     @posts = Post.paginate(:page => params[:page], :per_page => 10)
   end
 
