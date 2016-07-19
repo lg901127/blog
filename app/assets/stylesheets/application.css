@@ -12,4 +12,32 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+nav {
+  text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+  font-weight: bold;
+}
+.nav-left {
+  float: left;
+}
+.nav-right {
+  float: right;
+  height: 24px;
+}
+.notice {
+clear: both;
+}
+.content {
+  float: left;
+  clear: both;
+  position: fixed;
+  left: 450px;
+  top: 100px;
+  border: black ridge 2px;
+  border-radius: 10px;
+  padding: 20px;
+}
